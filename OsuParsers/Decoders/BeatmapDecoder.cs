@@ -360,7 +360,7 @@ namespace OsuParsers.Decoders
 
             Vector2 position = new Vector2(ParseHelper.ToFloat(tokens[0]), ParseHelper.ToFloat(tokens[1]));
 
-            int startTime = (int)Convert.ToDouble(tokens[2]);
+            int startTime = (int)ParseHelper.ToFloat(tokens[2]);
 
             HitObjectType type = (HitObjectType)int.Parse(tokens[3]);
 
