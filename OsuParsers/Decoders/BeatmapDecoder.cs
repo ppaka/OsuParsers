@@ -412,8 +412,11 @@ namespace OsuParsers.Decoders
                     List<HitSoundType> edgeHitSounds = null;
                     if (tokens.Length > 8 && tokens[8].Length > 0)
                     {
-                        edgeHitSounds = new List<HitSoundType>();
-                        edgeHitSounds = Array.ConvertAll(tokens[8].Split('|'), s => (HitSoundType)Convert.ToInt32(s)).ToList();
+                        if (tokens[8] != "0:0:0:0:")
+                        {
+                            edgeHitSounds = new List<HitSoundType>();
+                            edgeHitSounds = Array.ConvertAll(tokens[8].Split('|'), s => (HitSoundType)Convert.ToInt32(s)).ToList();
+                        }
                     }
 
                     List<Tuple<SampleSet, SampleSet>> edgeAdditions = null;
