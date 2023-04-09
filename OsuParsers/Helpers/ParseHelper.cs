@@ -43,8 +43,8 @@ namespace OsuParsers.Helpers
                 string[] positionTokens = segmentPos.Split(':');
                 if (positionTokens.Length == 2)
                 {
-                    var x = Convert.ToInt32(positionTokens[0], CultureInfo.InvariantCulture);
-                    var y = Convert.ToInt32(positionTokens[1], CultureInfo.InvariantCulture);
+                    var x = (int)Convert.ToDouble(positionTokens[0], CultureInfo.InvariantCulture);
+                    var y = (int)Convert.ToDouble(positionTokens[1], CultureInfo.InvariantCulture);
                     sliderPoints.Add(new Vector2(x, y));
                 }
             }
